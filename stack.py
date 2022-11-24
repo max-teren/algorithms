@@ -59,7 +59,7 @@ class ArrayStack(Stack):
     def pop(self) -> str:
         if self.size <= len(self.data) / 4:
             print("Scale down array")
-            smaller_array = [None] * len(self.data) / 2
+            smaller_array = [None] * int(len(self.data) / 2)
             for i in range(0, self.size):
                 smaller_array[i] = self.data[i]
             self.data = smaller_array
@@ -70,3 +70,41 @@ class ArrayStack(Stack):
 
     def is_empty(self) -> bool:
         return self.size == 0
+
+
+if __name__ == '__main__':
+    stack = ArrayStack()
+    stack.push("1")
+    stack.push("2")
+    print(f"Stack {stack.data}")
+    print(f"Pop item {stack.pop()}")
+    stack.push("3")
+    stack.push("4")
+    print(f"Stack {stack.data}")
+    print(f"Pop item {stack.pop()}")
+    stack.push("5")
+    stack.push("6")
+    stack.push("7")
+    stack.push("8")
+    stack.push("9")
+    stack.push("10")
+    print(f"Stack {stack.data}")
+    print(f"Pop item {stack.pop()}")
+    stack.push("11")
+    stack.push("12")
+    stack.push("13")
+    print(stack.data)
+    stack.push("14")
+    stack.push("15")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(f"Pop item {stack.pop()}")
+    print(stack.data)
