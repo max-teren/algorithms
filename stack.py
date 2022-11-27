@@ -9,18 +9,18 @@ class Stack:
         pass
 
 
-class ListStack(Stack):
+class LinkedListStack(Stack):
     class Node:
         def __init__(self):
             self.item = None
             self.next = None
 
     def __init__(self):
-        self.data = ListStack.Node()
+        self.data = LinkedListStack.Node()
         self.size = 0
 
     def push(self, item: str):
-        new_node = ListStack.Node()
+        new_node = LinkedListStack.Node()
         new_node.item = item
         new_node.next = self.data
         self.data = new_node
@@ -46,7 +46,7 @@ class ArrayStack(Stack):
         self.data = [None] * 2
         self.size = 0
 
-    def push(self, item: str):
+    def push(self, item):
         if self.size == len(self.data):
             print("Scale up array")
             bigger_arr = [None] * self.size * 2
@@ -56,7 +56,7 @@ class ArrayStack(Stack):
         self.data[self.size] = item
         self.size += 1
 
-    def pop(self) -> str:
+    def pop(self):
         if self.size <= len(self.data) / 4:
             print("Scale down array")
             smaller_array = [None] * int(len(self.data) / 2)
@@ -72,7 +72,7 @@ class ArrayStack(Stack):
         return self.size == 0
 
 
-if __name__ == '__main__':
+def AS_test():
     stack = ArrayStack()
     stack.push("1")
     stack.push("2")
@@ -108,3 +108,7 @@ if __name__ == '__main__':
     print(f"Pop item {stack.pop()}")
     print(f"Pop item {stack.pop()}")
     print(stack.data)
+
+
+if __name__ == '__main__':
+    AS_test()
