@@ -15,7 +15,7 @@ class BST:
 
     def insert(self, key, value):
         def insert_tree(sub_root: Node, key, value):
-            if not sub_root or not sub_root.key:
+            if not sub_root:
                 return Node(key, value)
             elif sub_root.key > key:
                 sub_root.left = insert_tree(sub_root.left, key, value)
